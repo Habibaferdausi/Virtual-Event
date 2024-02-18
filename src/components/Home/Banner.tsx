@@ -9,7 +9,7 @@ export default function Banner() {
     <div className='mx-auto max-w-screen-2xl'>
     <div className="mb-10 mt-3 px-5">
       <div className=" flex ps-3 lg:ps-1  justify-between lg:pt-10 ">
-        <div className="lg:mt-10 lg:pt-10 pt-6 text-start ">
+        <div className="lg:mt-10  pt-6 text-start ">
           
 
           <h1 className="lg:text-[35px] md:text-[22px] text-[13px] font-bold  mt-2  lg:mt-2  text-blue-400 ">
