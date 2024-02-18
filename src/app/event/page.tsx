@@ -50,17 +50,19 @@ const CreateEventPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const eventData: EventData = { title, description, date, time, rooms };
-    const added = await addData(db, eventData);
-    if (added) {
-      setTitle("");
-      setDescription('');
-      setDate('');
-      setTime('');
-      setRooms([]);
-      setNewRoom('');
-      alert("Successfully added");
-    }
+    const formattedTime = new Date(`${date}T${time}`).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+
+  const eventData: EventData = { title, description, date, time: formattedTime, rooms };
+  const added = await addData(db, eventData);
+  if (added) {
+    setTitle("");
+    setDescription('');
+    setDate('');
+    setTime('');
+    setRooms([]);
+    setNewRoom('');
+    alert("Successfully added");
+  }
   };
 
   return (
