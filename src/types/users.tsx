@@ -1,0 +1,4 @@
+interface UserContextType {
+    user: UserType; 
+  }
+  
