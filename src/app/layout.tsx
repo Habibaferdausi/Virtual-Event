@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import AuthProvider from "@/components/Auth/AuthProvider";
@@ -12,23 +12,23 @@ export const metadata: Metadata = {
   description: "Created by Habiba Ferdausi Ritu",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       
-      <body className={inter.className}>
+      <body>
+        <main>
         <AuthProvider>
-          <main>
-        <Navbar/>
-        {children}
-        <Footer/>
+    <Navbar />
+    {children}
+    <Footer />
+</AuthProvider>
         </main>
-        </AuthProvider>
-        </body>
+      </body>
     </html>
   );
 }

@@ -1,49 +1,101 @@
-[debug] [2024-02-19T08:27:51.491Z] ----------------------------------------------------------------------
-[debug] [2024-02-19T08:27:51.501Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
-[debug] [2024-02-19T08:27:51.502Z] CLI Version:   13.0.2
-[debug] [2024-02-19T08:27:51.502Z] Platform:      win32
-[debug] [2024-02-19T08:27:51.503Z] Node Version:  v21.5.0
-[debug] [2024-02-19T08:27:51.503Z] Time:          Mon Feb 19 2024 14:27:51 GMT+0600 (Bangladesh Standard Time)
-[debug] [2024-02-19T08:27:51.503Z] ----------------------------------------------------------------------
+[debug] [2024-02-19T08:30:48.315Z] ----------------------------------------------------------------------
+[debug] [2024-02-19T08:30:48.320Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-02-19T08:30:48.321Z] CLI Version:   13.0.2
+[debug] [2024-02-19T08:30:48.321Z] Platform:      win32
+[debug] [2024-02-19T08:30:48.321Z] Node Version:  v21.5.0
+[debug] [2024-02-19T08:30:48.322Z] Time:          Mon Feb 19 2024 14:30:48 GMT+0600 (Bangladesh Standard Time)
+[debug] [2024-02-19T08:30:48.322Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-02-19T08:27:51.510Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2024-02-19T08:27:51.603Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-02-19T08:27:51.603Z] > authorizing via signed-in user (ritu.pramanik1@gmail.com)
+[debug] [2024-02-19T08:30:48.446Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-19T08:30:48.446Z] > authorizing via signed-in user (ritu.pramanik1@gmail.com)
+[debug] [2024-02-19T08:30:48.447Z] [iam] checking project virtual-event-space-27375 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-02-19T08:30:48.450Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/virtual-event-space-27375:testIamPermissions [none]
+[debug] [2024-02-19T08:30:48.450Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/virtual-event-space-27375:testIamPermissions x-goog-quota-user=projects/virtual-event-space-27375
+[debug] [2024-02-19T08:30:48.450Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/virtual-event-space-27375:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-02-19T08:30:50.272Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/virtual-event-space-27375:testIamPermissions 200
+[debug] [2024-02-19T08:30:50.272Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/virtual-event-space-27375:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-02-19T08:30:50.274Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 [none]
+[debug] [2024-02-19T08:30:50.998Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 200
+[debug] [2024-02-19T08:30:50.999Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 {"projectId":"virtual-event-space-27375","projectNumber":"1098716865490","displayName":"virtual-event-space","name":"projects/virtual-event-space-27375","resources":{"hostingSite":"virtual-event-space-27375"},"state":"ACTIVE","etag":"1_ea5003a5-31f5-4923-bbf1-80d16d6dcd78"}
+[debug] [2024-02-19T08:30:57.662Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites pageToken=&pageSize=10
+[debug] [2024-02-19T08:30:58.974Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites 200
+[debug] [2024-02-19T08:30:58.975Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites {"sites":[{"name":"projects/virtual-event-space-27375/sites/virtual-event-space-27375","defaultUrl":"https://virtual-event-space-27375.web.app","appId":"1:1098716865490:web:cc67e0d2b2ed9fc8315e0b","type":"DEFAULT_SITE"}]}
+[debug] [2024-02-19T08:30:58.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1098716865490:web:cc67e0d2b2ed9fc8315e0b/config [none]
+[debug] [2024-02-19T08:31:00.161Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1098716865490:web:cc67e0d2b2ed9fc8315e0b/config 200
+[debug] [2024-02-19T08:31:00.161Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:1098716865490:web:cc67e0d2b2ed9fc8315e0b/config {"projectId":"virtual-event-space-27375","appId":"1:1098716865490:web:cc67e0d2b2ed9fc8315e0b","storageBucket":"virtual-event-space-27375.appspot.com","apiKey":"AIzaSyB3WKjNyCQ0l35PB3gmCO4RMlw6XN4smjM","authDomain":"virtual-event-space-27375.firebaseapp.com","messagingSenderId":"1098716865490","measurementId":"G-CZBZYEG4TX"}
 [info] 
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
 
-You're about to initialize a Firebase project in this directory:
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
 
-  C:\Ritu\virtual-event
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-Before we get started, keep in mind:
+[debug] [2024-02-19T08:31:14.864Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites/virtual-event-space-27375 [none]
+[debug] [2024-02-19T08:31:16.042Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites/virtual-event-space-27375 200
+[debug] [2024-02-19T08:31:16.042Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/virtual-event-space-27375/sites/virtual-event-space-27375 {"name":"projects/virtual-event-space-27375/sites/virtual-event-space-27375","defaultUrl":"https://virtual-event-space-27375.web.app","appId":"1:1098716865490:web:cc67e0d2b2ed9fc8315e0b","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.1.0
 
-  * You are currently outside your home directory
-
-[debug] [2024-02-19T08:27:52.397Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2024-02-19T08:27:52.398Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
 [info] 
-=== Project Setup
+
+[info]    Creating an optimized production build ...
+
+[info] (node:528) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[info]  ⚠ Compiled with warnings
+
+
+[info] ./src/components/Auth/AuthProvider.tsx
+Attempted import error: '../../app/firebaseConfig' does not contain a default export (imported as 'app').
+
+Import trace for requested module:
+./src/components/Auth/AuthProvider.tsx
+
+
+[info] (node:16304) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
 [info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
-[info] 
-[debug] [2024-02-19T08:28:50.910Z] > refreshing access token with scopes: []
-[debug] [2024-02-19T08:28:50.912Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2024-02-19T08:28:50.912Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2024-02-19T08:28:51.284Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2024-02-19T08:28:51.285Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2024-02-19T08:28:51.299Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
-[debug] [2024-02-19T08:28:53.021Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
-[debug] [2024-02-19T08:28:53.021Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
-[info] i  Using project virtual-event-space-27375 (virtual-event-space) 
-[info] 
-=== Hosting Setup
-[debug] [2024-02-19T08:29:06.303Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 [none]
-[debug] [2024-02-19T08:29:08.102Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 200
-[debug] [2024-02-19T08:29:08.103Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/virtual-event-space-27375 {"projectId":"virtual-event-space-27375","projectNumber":"1098716865490","displayName":"virtual-event-space","name":"projects/virtual-event-space-27375","resources":{"hostingSite":"virtual-event-space-27375"},"state":"ACTIVE","etag":"1_ea5003a5-31f5-4923-bbf1-80d16d6dcd78"}
+
+[info] 🌼   daisyUI 4.7.2
+
+[info] ├─ ✔︎ 2 themes added		https://daisyui.com/docs/themes
+
+[info] ╰─ ❤︎ Support daisyUI project:	https://opencollective.com/daisyui
+
+
+[info]  ⚠ Compiled with warnings
+
+
+[info] ./src/components/Auth/AuthProvider.tsx
+Attempted import error: '../../app/firebaseConfig' does not contain a default export (imported as 'app').
+
+Import trace for requested module:
+./src/components/Auth/AuthProvider.tsx
+
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] Failed to compile.
+
+
+[info] ./src/app/layout.tsx:24:10
+Type error: Type '{ children: Element; }' has no properties in common with type 'IntrinsicAttributes'.
+
+  22 |       
+  23 |       <body className={inter.className}>
+> 24 |         <AuthProvider>
+     |          ^
+  25 |           <main>
+  26 |         <Navbar/>
+  27 |         {children}
+
+[debug] [2024-02-19T08:31:55.786Z] Error: ENOENT: no such file or directory, open 'C:\Ritu\virtual-event\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
