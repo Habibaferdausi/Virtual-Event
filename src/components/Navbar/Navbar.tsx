@@ -35,7 +35,7 @@ export default function Navbar() {
           </ul>
         
       </div>
-      <a className="btn btn-ghost text-xl">Virtual Event</a>
+      <Link href="/" className="btn btn-ghost text-xl">Virtual Event</Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
@@ -44,7 +44,7 @@ export default function Navbar() {
           <li> <Link href="/eventspage" className="font-semibold text-lg text-purple-500">Events</Link> </li> 
           
         {user?(
-        <li> <Link href="/event" className="font-semibold text-lg text-purple-500">Add Event</Link></li>
+        <li> <Link href="/addevent" className="font-semibold text-lg text-purple-500">Add Event</Link></li>
 
         ):(
           <li></li>

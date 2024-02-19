@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { addDoc, collection, Firestore, doc } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db } from "../../app/firebaseConfig";
+import Swal from "sweetalert2";
 
 interface Room {
   id: string;
@@ -28,7 +29,7 @@ async function addData(db: Firestore, eventData: EventData): Promise<boolean> {
   }
 }
 
-const CreateEventPage: React.FC = () => {
+const AddEvent: React.FC = () => {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>("");
   const [date, setDate] = useState<string>('');
@@ -37,7 +38,7 @@ const CreateEventPage: React.FC = () => {
   const [rooms, setRooms] = useState<Room[]>([]);
 
   const generateRoomId = (): string => {
-    // Generate a unique ID using timestamp and random number
+   
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   };
 
@@ -61,14 +62,21 @@ const CreateEventPage: React.FC = () => {
     setTime('');
     setRooms([]);
     setNewRoom('');
-    alert("Successfully added");
+    Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Successfully Added",
+        showConfirmButton: false,
+        timer: 1500,
+      });
   }
   };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
-      <h1 className="text-center mt-3 text-black text-xl md:text-2xl font-semibold">Add Event Data</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-md">
+    
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-2">
+      <h1 className="lg:text-3xl text-xl text-purple-500 font-bold mt-3 text-center mb-3 lg:pb-11">Add Event Data</h1>
         <div className="my-6">
           <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title:</label>
           <input type="text" id="title" className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -106,4 +114,4 @@ const CreateEventPage: React.FC = () => {
   );
 };
 
-export default CreateEventPage;
+export default AddEvent;

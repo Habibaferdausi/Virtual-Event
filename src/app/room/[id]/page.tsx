@@ -1,8 +1,24 @@
-import React from "react";
-import RoomChat from "@/components/RoomChat/RoomChat"; // Adjust the path as per your project structure
+"use client";
+import React, { useContext } from "react";
+import RoomChat from "@/components/RoomChat/RoomChat"; 
+import { AuthContext } from "@/components/Auth/AuthProvider";
+import { useRouter } from "next/navigation";
 
 const RoomPage: React.FC = () => {
-  return <RoomChat />;
+  const { user } = useContext(AuthContext);
+  const navigate = useRouter();
+
+
+  if (!user) {
+    navigate('/login');
+    return null; 
+  }
+
+  return (
+    <div>
+      <RoomChat />
+    </div>
+  );
 };
 
 export default RoomPage;

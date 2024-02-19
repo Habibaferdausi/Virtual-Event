@@ -28,7 +28,7 @@ export default function Login() {
       .then((result) => {
         const user = result.user;
       
-        navigate.push('/event')
+        navigate.push('/')
         Swal.fire({
           position: "top",
           icon: "success",
@@ -50,7 +50,7 @@ export default function Login() {
     googleLogin()
       .then((result) => {
         const user = result.user;
-        navigate.push('/event')
+        navigate.push('/')
         Swal.fire({
           position: "top",
           icon: "success",
