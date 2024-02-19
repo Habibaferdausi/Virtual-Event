@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 import Link from "next/link";
-import Marquee from "react-fast-marquee";
+
 
 const Events: React.FC = () => {
   const [events, setEvents] = useState<any[]>([]);
@@ -20,7 +20,7 @@ const Events: React.FC = () => {
     fetchEvents();
   }, []);
 
-  const visibleEvents = events.slice(0, 5);
+  const visibleEvents = events.slice(0,2);
 
   return (
     <div className="container mx-auto px-4 lg:py-8 py-2">

@@ -46,7 +46,7 @@ const RoomChat: React.FC = () => {
         timestamp: new Date(),
       });
       console.log("Message sent successfully!");
-      setNewMessage(""); // Clear the input field after sending the message
+      setNewMessage(""); 
     } catch (error) {
       console.error("Error sending message: ", error);
       alert("Error sending message: " + error.message);
