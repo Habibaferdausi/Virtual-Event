@@ -23,16 +23,17 @@ const Events: React.FC = () => {
   const visibleEvents = events.slice(0, 5);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl lg:text-4xl font-semibold text-center text-purple-500 mb-6">Upcoming Events</h1>
+    <div className="container mx-auto px-4 lg:py-8 py-2">
+      <h1 className="text-2xl lg:text-4xl font-semibold text-center text-purple-500 mb-6">Upcoming <span className="text-blue-500">Events</span></h1>
 
-      <section className="py-12 bg-fixed " style={{
+      <section className="lg:py-12 py-1 bg-fixed " style={{
          
         }}>
         <div className="">
           <div className="lg:flex lg:flex-col-reverse lg:items-end lg:mx-3">
             {visibleEvents.map((event, index) => (
-              <div key={index} className="grid grid-cols-4  mx-auto w-full ms-1 lg:ms-1 mb-4  ">
+               
+              <Link  key={index} href={`/eventspage/${event.id}`} className="grid grid-cols-4  mx-auto w-full ms-1 lg:ms-1 mb-4  ">
                 <div className="lg:col-span-1 col-span-3 bg-blue-400 p-3 lg:p-6 flex flex-col items-center">
                   <p className="text-white lg:text-xl text-lg font-bold" style={{ margin: "auto" }}>
                     {event.date}
@@ -51,12 +52,12 @@ const Events: React.FC = () => {
                     {event.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       <Link href ="/eventspage">
-          <button  className="text-white font-semibold text-xl bg-purple-500 p-2 rounded mt-4 block mx-auto">
+          <button  className="text-white font-semibold lg:text-lg text-sm bg-purple-500 p-2 rounded lg:mt-4 mt-2 block mx-auto">
             View All Events</button>
             </Link>
       </section>
