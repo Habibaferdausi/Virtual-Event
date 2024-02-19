@@ -24,7 +24,7 @@ export default function SignUp() {
         .then((result) => {
           updateUser(result.user, name, photoUrl)
             .then(() => {
-                navigate.push('/Dashboard')
+                navigate.push('/')
               Swal.fire({
                 position: "top",
                 icon: "success",
